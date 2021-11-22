@@ -1,5 +1,0 @@
-fileignoreconfig:
-- filename: .idea/.gitignore
-  checksum: 18ad51d8814073ef104d392b0a97ef7364c74d5ee0af4cd5f73108d152a25a73
-- filename: pageObjects/LoginPage.py
-  checksum: 157a10d64a0b5b742579a9c00625dc0806936d977be03d0193a3538254eaa0a6
