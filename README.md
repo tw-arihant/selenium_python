@@ -1,10 +1,10 @@
 # selenium_python
-Pre requisite:
-Python 
+**Pre requisite:** <br>
+Python <br>
 IDE
 
 -------------------------------------------------------------------------
-To run use cmd 
+**To run use cmd** 
 ```
 pytest -v -s location/test_name --browser=browsername
 ```
