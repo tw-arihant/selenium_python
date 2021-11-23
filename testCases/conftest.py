@@ -3,12 +3,16 @@ from selenium import webdriver
 
 @pytest.fixture()
 def setup(browser):
+    driver = None
     if browser=='chrome':
         driver=webdriver.Chrome()
         print("Launching chrome browser.........")
     elif browser=='firefox':
         driver = webdriver.Firefox()
         print("Launching firefox browser.........")
+    else:
+        driver= webdriver.Chrome()
+        print("Launching chrome browser.........")
     return driver
 
 def pytest_addoption(parser):    # This will get the value from CLI /hooks
