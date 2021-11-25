@@ -25,10 +25,10 @@ def browser(request):  # This will return the Browser value to setup method
 ########### pytest HTML Report ################
 
 # It is hook for Adding Environment info to HTML Report
-def pytest_configure(config):
-    config._metadata['Project Name'] = 'Selenium Python'
-    config._metadata['Module Name'] = 'Testing'
-    config._metadata['Tester'] = 'Arihant'
+# def pytest_configure(config):
+#     config._metadata['Project Name'] = 'Selenium Python'
+#     config._metadata['Module Name'] = 'Testing'
+#     config._metadata['Tester'] = 'Arihant'
 
 # It is hook for delete/Modify Environment info to HTML Report
 @pytest.mark.optionalhook

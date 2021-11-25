@@ -1,4 +1,4 @@
-
+selenium==4.0
 pytest==6.2.5
 allure-pytest==2.9.45
-numpy==1.18.5
+

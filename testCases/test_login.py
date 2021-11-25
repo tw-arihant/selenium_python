@@ -11,10 +11,10 @@ class Test_001_Login:
     logger=LogGen.loggen()
 
     @pytest.mark.regression
-    def test_homePageTitle(self,setup):
+    def test_homePageTitle(self):
         self.logger.info("*************** Test_001_Login *****************")
         self.logger.info("****Started Home page title test ****")
-        self.driver = setup
+        self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.logger.info("****Opening URL****")
         self.driver.get(self.baseURL)
         act_title=self.driver.title
@@ -31,10 +31,10 @@ class Test_001_Login:
 
     @pytest.mark.sanity
     @pytest.mark.regression
-    def test_login(self,setup):
+    def test_login(self):
 
         self.logger.info("****Started Login Test****")
-        self.driver = setup
+        self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.driver.get(self.baseURL)
         self.lp=LoginPage(self.driver)
         self.lp.setUserName(self.username)
@@ -50,3 +50,7 @@ class Test_001_Login:
             self.driver.save_screenshot(".\\Screenshots\\" + "test_DashboardTitle.png")
             self.driver.close()
             assert False
+
+run = Test_001_Login()
+run.test_login()
+run.test_homePageTitle()
