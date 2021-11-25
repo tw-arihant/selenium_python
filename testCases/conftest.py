@@ -1,8 +1,15 @@
 import pytest
+import chromedriver_autoinstaller
 from selenium import webdriver
 
 @pytest.fixture()
 def setup(browser):
+    chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+    # and if it doesn't exist, download it automatically,
+    # then add chromedriver to path
+
+
+    # driver.get("http://www.python.org")
     driver = None
     if browser=='chrome':
         driver=webdriver.Chrome()
@@ -11,7 +18,7 @@ def setup(browser):
         driver = webdriver.Firefox()
         print("Launching firefox browser.........")
     else:
-        driver= webdriver.Chrome()
+        driver = webdriver.Chrome()
         print("Launching chrome browser.........")
     return driver
 

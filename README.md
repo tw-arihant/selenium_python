@@ -6,11 +6,14 @@ IDE
 
 -------------------------------------------------------------------------
 python version 3.8 or above
+```
+pip install chromedriver-autoinstaller
+```
 create venv of python
 ```
 python3 -m venv venv
 ```
-
+Install the requirements mentioned in the script
 ```
 pip install -r requirements.txt
 ```
