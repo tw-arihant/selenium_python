@@ -8,15 +8,20 @@ class Test_001_Login:
     baseURL = ReadConfig.getApplicationURL()
     username = ReadConfig.getUseremail()
     password = ReadConfig.getPassword()
-    logger=LogGen.loggen()
+
+    # baseURL="http://admin-demo.nopcommerce.com"
+    # username="admin@yourstore.com"
+    # password="admin"
+    logger= LogGen.loggen()
+
 
     @pytest.mark.regression
-    def test_homePageTitle(self):
+    def test_homePageTitle(self, setup):
         self.logger.info("*************** Test_001_Login *****************")
         self.logger.info("****Started Home page title test ****")
-        self.driver = webdriver.Chrome
-        # self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
+        self.driver = setup
         self.logger.info("****Opening URL****")
+        # self.driver.get("baseURL=http://admin-demo.nopcommerce.com")
         self.driver.get(self.baseURL)
         act_title=self.driver.title
 
@@ -32,16 +37,15 @@ class Test_001_Login:
 
     @pytest.mark.sanity
     @pytest.mark.regression
-    def test_login(self):
+    def test_login(self, setup):
 
         self.logger.info("****Started Login Test****")
-        self.driver = webdriver.Chrome
-        # self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
+        # self.driver = webdriver.Chrome
+        self.driver = setup
         self.driver.get(self.baseURL)
         self.lp=LoginPage(self.driver)
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
-        self.lp.clickLogin()
         act_title=self.driver.title
         if act_title=="Dashboard / nopCommerce administration":
             self.logger.info("****Login test passed ****")
@@ -53,6 +57,6 @@ class Test_001_Login:
             self.driver.close()
             assert False
 
-run = Test_001_Login()
-run.test_login()
-run.test_homePageTitle()
+# run = Test_001_Login()
+# run.test_login()
+# run.test_homePageTitle()

@@ -1,21 +1,18 @@
 # selenium_python
 **Pre requisite:** <br>
-Python <br>
-IDE
+Python 3 <br>
+IDE - any
 
 
 -------------------------------------------------------------------------
 python version 3.8 or above
-```
-pip install chromedriver-autoinstaller
-```
 create venv of python
 ```
 python3 -m venv venv
 ```
 Install the requirements mentioned in the script
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 **To run use cmd** 

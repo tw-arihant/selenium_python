@@ -1,10 +1,13 @@
 import pytest
-import chromedriver_autoinstaller
+# import chromedriver_autoinstaller
 from selenium import webdriver
+import webdriver_manager
+from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.firefox import FirefoxManager
 
 @pytest.fixture()
 def setup(browser):
-    chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+    # chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
     # and if it doesn't exist, download it automatically,
     # then add chromedriver to path
 
@@ -12,15 +15,16 @@ def setup(browser):
     # driver.get("http://www.python.org")
     driver = None
     if browser=='chrome':
-        driver=webdriver.Chrome()
+        driver=webdriver.Chrome(ChromeDriverManager().install())
         print("Launching chrome browser.........")
     elif browser=='firefox':
         driver = webdriver.Firefox()
         print("Launching firefox browser.........")
     else:
-        driver = webdriver.Chrome()
+        driver=webdriver.Chrome(ChromeDriverManager().install())
         print("Launching chrome browser.........")
-    return driver
+    yield driver
+    driver.quit()
 
 def pytest_addoption(parser):    # This will get the value from CLI /hooks
     parser.addoption("--browser")
