@@ -12,7 +12,7 @@ python3 -m venv venv
 ```
 Install the requirements mentioned in the script
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 **To run use cmd** 
