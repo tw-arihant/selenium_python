@@ -5,10 +5,14 @@ IDE - any
 
 
 -------------------------------------------------------------------------
-python version 3.8 or above
-create venv of python
+
+Create venv of python
 ```
 python3 -m venv venv
+```
+Activate the venv
+```
+./venv/bin/activate
 ```
 Install the requirements mentioned in the script
 ```
@@ -24,4 +28,5 @@ Default browser = Chrome
 Example: 
 ```
 pytest -s -v testCases/test_login.py --browser=chrome
+pytest -s -v testCases/test_login.py
 ```
