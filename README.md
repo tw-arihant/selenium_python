@@ -32,7 +32,7 @@ python3 -m venv venv
 ```
 ./venv/bin/activate
 ```
-4.Install the dependencies that are mentioned in the script
+4Install the dependencies that are mentioned in the script
 ```
 pip install -r requirements.txt
 ```

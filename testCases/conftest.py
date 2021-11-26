@@ -1,9 +1,10 @@
 import pytest
-# import chromedriver_autoinstaller
 from selenium import webdriver
-import webdriver_manager
 from webdriver_manager.chrome import ChromeDriverManager
-# from webdriver_manager.firefox import FirefoxManager
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from webdriver_manager.microsoft import IEDriverManager
+
 
 @pytest.fixture()
 def setup(browser):
@@ -18,8 +19,14 @@ def setup(browser):
         driver=webdriver.Chrome(ChromeDriverManager().install())
         print("Launching chrome browser.........")
     elif browser=='firefox':
-        driver = webdriver.Firefox()
+        driver = webdriver.Firefox(GeckoDriverManager().install())
         print("Launching firefox browser.........")
+    elif browser=='ie':
+        driver = webdriver.Ie(IEDriverManager().install())
+        print("Launching Internet Explorer browser.........")
+    elif browser=='edge':
+        driver = webdriver.Edge(EdgeChromiumDriverManager().install())
+        print("Launching Edge browser.........")
     else:
         driver=webdriver.Chrome(ChromeDriverManager().install())
         print("Launching chrome browser.........")

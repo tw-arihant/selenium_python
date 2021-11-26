@@ -31,7 +31,7 @@ class Test_001_Login:
             assert True
         else:
             self.logger.error("**** Home page title test failed****")
-            self.driver.save_screenshot(".\\Screenshots\\"+"test_homePageTitle.png")
+            self.driver.save_screenshot("Screenshots/test_homePageTitle.png")
             self.driver.close()
             assert False
 
@@ -53,7 +53,7 @@ class Test_001_Login:
             assert True
         else:
             self.logger.error("****Login test failed ****")
-            self.driver.save_screenshot(".\\Screenshots\\" + "test_DashboardTitle.png")
+            self.driver.save_screenshot("Screenshots/test_DashboardTitle.png")
             self.driver.close()
             assert False
 
